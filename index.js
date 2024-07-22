@@ -78,3 +78,15 @@ function Person(first, last, age, eye) {
 
 // const mySelf = new Person("Johnny", "Rally", 22, "green");
 // console.log("firstName--", mySelf.firstName + " " + mySelf.lastName + " " + mySelf.age)
+
+console.log("Date=======", Date.now());
+console.log("Date=======", Date());
+console.log("Date=======", new Date());
+const date = new Date()
+console.log("date convert to string", date.toString())
+console.log("Date=======", date.getDate());
+console.log("Date=======", date.getDay());
+console.log("Date=======", date.getFullYear());
+console.log("Date=======", date.getHours());
+console.log("Date=======", date.getMonth());
+console.log("Today date is: ", date.getDate()+"/"+date.getMonth() +"/"+ date.getFullYear())
