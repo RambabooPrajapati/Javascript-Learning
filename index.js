@@ -1,53 +1,80 @@
+// console.log(typeof Symbol("Ram"));
+// How to Display JavaScript Objects?
+// const person = {
+//     name: "John",
+//     age: 30,
+//     city: "New York"
+//   };
+//   console.log("--person object---",person);
+//   Some solutions to display JavaScript objects are:
 
-// Array flat() meathod
+// Displaying the Object Properties by name
+// const person = {
+//     name: "John",
+//     age: 30,
+//     city: "New York"
+//   };
+//   console.log(person.name + "," + person.age + "," + person.city);
+// Displaying the Object Properties in a Loop
+// let text = "";
+// for (let x in person) {
+//     console.log("--x---",x)
+// //   text += person.x + " ";// will not work output:undefined undefined undefined
+//   text += person[x] + " ";};
+// console.log(text)
 
-    // const arr = [3, 3, 0, [0, 5], [5, 8], 8];
-    // console.log(arr); // output: [ 3, 3, 0, [ 0, 5 ], [ 5, 8, [ 5, 6 ] ], 8 ]
-
-    // const arr = [3, 3, 0, [0, 5], [5, 8], 8];
-    // console.log(arr.flat()); //output: [ 3, 3, 0, 0, 5, 5, 8]
-
-    // const arr = [3, 3, 0, [0, 5], [5, 8, [5, 6],], 8];
-    // console.log(arr.flat(2));
-
-    // const multiArray = [3, 5, 6, [3, 5, 3, [3, 2]], 4];
-    // console.log(multiArray.flat(3));
-    // console.log(multiArray.flat(Infinity)); // we can use Infinity key word
-
-// Print 1 to 100 number using for loop
-    // let number = [];
-    // for (let i = 1; i <= 100; i++) {
-    //     number.push(i);
-    // }
-    // for (let i = 1; i <= 100; i++) {
-    //     number.push(i*2);
-    // }
-    // console.log(number);
-
-
-// Print 1 to 100 number without using for loop
-
-    // const counting = []
-    // function count(start, end) {
-    //     counting.push(start);
-    //     if (start < end) {
-    //         count(start + 1, end);
-    //     }
-    //     return start;
-    // }
-    // console.log("before calling count function ==", counting)
-    // count(1, 100);
-    // console.log("after calling count function ==", counting)
-
-
-// how to some of array values
+// Displaying the Object using Object.values()
+//Using Object.entries()
+// const fruits = {Bananas:300, Oranges:200, Apples:500};
+// console.log(Object.entries(fruits));
+// let text = "";
+// for (let [key, value] of Object.entries(fruits)) {
+//   text += key + ": " + value + ", ";
+// }
+// console.log(text)
+// Displaying the Object using JSON.stringify():
+//JavaScript objects can be converted to a string with JSON method JSON.stringify().
+// Create an Object
+// const person = {
+//     name: "John",
+//     age: 30,
+//     city: "New York"
+//   };
   
-    //   const array = [1,2,3,4,5,6,7,8,9,];
-    //   const sum = array.reduce((a,value)=>{
-    //     return a + value;
-    //   });
-    //   const sum = array.reduce((a,value)=>{
-    //     return a + value;
-    //   }, 10);
-    //   console.log("Sum of array values", sum)
+//   // Stringify Object
+//   let myString = JSON.stringify(person);
+//   console.log("JSON.stringigy method",JSON.stringify());
+//   console.log(myString)
 
+// Object Constructor Functions
+// Sometimes we need to create many objects of the same type.
+
+// To create an object type we use an object constructor function.
+
+// It is considered good practice to name constructor functions with an upper-case first letter.
+// Object Type Person
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+// Note:
+// In the constructor function, this has no value.
+
+// The value of this will become the new object when a new object is created.
+// Now we can use new Person() to create many new Person objects:
+
+// const myFather = new Person("John", "Doe", 50, "blue");
+// console.log("myFather new Person object----",myFather)
+
+// console.log("firstName--", myFather.firstName + " " + myFather.lastName + " " + myFather.age)
+
+// const myMother = new Person("Sally", "Rally", 48, "green");
+// console.log("firstName--", myMother.firstName + " " + myMother.lastName + " " + myMother.age)
+
+// const mySister = new Person("Anna", "Rally", 18, "green");
+// console.log("firstName--", mySister.firstName + " " + mySister.lastName + " " + mySister.age)
+
+// const mySelf = new Person("Johnny", "Rally", 22, "green");
+// console.log("firstName--", mySelf.firstName + " " + mySelf.lastName + " " + mySelf.age)
